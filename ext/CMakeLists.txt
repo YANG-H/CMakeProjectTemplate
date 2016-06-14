@@ -11,7 +11,7 @@ set (_DEPENDENCY_INCLUDES ${CMAKE_CURRENT_SOURCE_DIR})
 set (_DEPENDENCY_LIBS "")
 set (_DEPENDENCY_BIN_PATHS "")
 
-# uncomment this to enable cereal dependency
+# uncomment this and place cereal-master.zip into ./cereal to enable cereal dependency
 # add_subdirectory("cereal")
 # list (APPEND _DEPENDENCY_NAMES "cereal")
 # list (APPEND _DEPENDENCY_INCLUDES ${CEREAL_INCLUDES})
@@ -21,7 +21,7 @@ set (_DEPENDENCY_BIN_PATHS "")
 #     add_definitions ( "-D${PROJECT_NAME}_WITH_CEREAL" )
 # endif ()
 
-# uncomment this to enable eigen3 dependency
+# uncomment this and place eigen.zip into ./eigen3 to enable eigen3 dependency
 # add_subdirectory("eigen3")
 # list (APPEND _DEPENDENCY_NAMES "eigen3")
 # list (APPEND _DEPENDENCY_INCLUDES ${EIGEN3_INCLUDES})
@@ -77,13 +77,13 @@ set (_DEPENDENCY_BIN_PATHS "")
 #     endif ()
 # endif()
 
-
 set (DEPENDENCY_NAMES ${_DEPENDENCY_NAMES} PARENT_SCOPE)
 set (DEPENDENCY_INCLUDES ${_DEPENDENCY_INCLUDES} PARENT_SCOPE)
 set (DEPENDENCY_LIBS ${_DEPENDENCY_LIBS} PARENT_SCOPE)
 set (DEPENDENCY_BIN_PATHS ${_DEPENDENCY_BIN_PATHS} PARENT_SCOPE)
 
 if (${BuildUnitTest})   
+	# place googletest-master.zip into ./googletest to enable unit tests 
     add_subdirectory("googletest")
     set (TEST_DEPENDENCY_NAMES "googletest" PARENT_SCOPE)
     set (TEST_DEPENDENCY_INCLUDES ${GTEST_INCLUDES} PARENT_SCOPE)

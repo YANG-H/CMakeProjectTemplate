@@ -17,7 +17,9 @@ file (GLOB test_sources
 )
 
 # remove test sources from sources
-list (REMOVE_ITEM sources ${test_sources})
+if (test_sources)
+    list (REMOVE_ITEM sources ${test_sources})
+endif ()
 
 source_group ("src" FILES ${sources})
 source_group ("src" FILES ${test_sources})
@@ -43,7 +45,9 @@ endforeach()
 add_library(${PROJECT_NAME}.Lib ${sources} ./lib.cpp)
 target_include_directories (${PROJECT_NAME}.Lib PUBLIC ${DEPENDENCY_INCLUDES})
 target_link_libraries (${PROJECT_NAME}.Lib ${DEPENDENCY_LIBS})
-add_dependencies(${PROJECT_NAME}.Lib ${DEPENDENCY_NAMES})
+if (DEPENDENCY_NAMES)
+    add_dependencies(${PROJECT_NAME}.Lib ${DEPENDENCY_NAMES})
+endif ()
 
 # the unit tests
 if (${BuildUnitTest})
