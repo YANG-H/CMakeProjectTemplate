@@ -1,0 +1,1 @@
+Download and place cereal-master.zip in this directory if you want to use cereal.
