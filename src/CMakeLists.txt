@@ -4,25 +4,30 @@ set (sources "")
 set (test_sources "")
 
 file (GLOB sources 
-    "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp" 
-    "${CMAKE_CURRENT_SOURCE_DIR}/*.hpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/*.c" 
-    "${CMAKE_CURRENT_SOURCE_DIR}/*.h"
+    "*.cpp" 
+    "*.hpp"
+    "*.c" 
+    "*.h"
 )
 file (GLOB test_sources
-    "${CMAKE_CURRENT_SOURCE_DIR}/*.test.cpp" 
-    "${CMAKE_CURRENT_SOURCE_DIR}/*.test.hpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/*.test.c" 
-    "${CMAKE_CURRENT_SOURCE_DIR}/*.test.h"
+    "*.test.cpp" 
+    "*.test.hpp"
+    "*.test.c" 
+    "*.test.h"
 )
+
+file (GLOB entry_sources main.cpp lib.cpp unittest.cpp)
+
+# remove entry cpp files
+list (REMOVE_ITEM sources ${entry_sources})
 
 # remove test sources from sources
 if (test_sources)
     list (REMOVE_ITEM sources ${test_sources})
 endif ()
 
-source_group ("src" FILES ${sources})
-source_group ("src" FILES ${test_sources})
+source_group ("Sources" FILES ${sources})
+source_group ("Sources" FILES ${test_sources})
 
 # tips for msvc
 if (MSVC)
