@@ -4,16 +4,16 @@ set (sources "")
 set (test_sources "")
 
 file (GLOB sources 
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp" 
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/*.hpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/*.c" 
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/*.h"
+    "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp" 
+    "${CMAKE_CURRENT_SOURCE_DIR}/*.hpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/*.c" 
+    "${CMAKE_CURRENT_SOURCE_DIR}/*.h"
 )
 file (GLOB test_sources
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/*.test.cpp" 
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/*.test.hpp"
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/*.test.c" 
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/*.test.h"
+    "${CMAKE_CURRENT_SOURCE_DIR}/*.test.cpp" 
+    "${CMAKE_CURRENT_SOURCE_DIR}/*.test.hpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/*.test.c" 
+    "${CMAKE_CURRENT_SOURCE_DIR}/*.test.h"
 )
 
 # remove test sources from sources
