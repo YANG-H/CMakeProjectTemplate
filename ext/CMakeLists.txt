@@ -31,6 +31,17 @@ set (_DEPENDENCY_BIN_PATHS "")
 #     add_definitions ( "-D${PROJECT_NAME}_WITH_EIGEN3" )
 # endif ()
 
+# uncomment this and place wheels-master.zip into ./wheels to enable wheels dependency
+# add_subdirectory("wheels")
+# list (APPEND _DEPENDENCY_NAMES "wheels")
+# list (APPEND _DEPENDENCY_INCLUDES ${WHEELS_INCLUDES})
+# list (APPEND _DEPENDENCY_LIBS ${WHEELS_LIBS})
+# if (MSVC)
+#     add_definitions ( "/D${PROJECT_NAME}_WITH_WHEELS" )
+# else ()
+#     add_definitions ( "-D${PROJECT_NAME}_WITH_WHEELS" )
+# endif ()
+
 # uncomment this to enable openblas dependency
 # find_package(OpenBLAS REQUIRED)
 # if (${OpenBLAS_FOUND})
@@ -76,6 +87,8 @@ set (_DEPENDENCY_BIN_PATHS "")
 #         add_definitions ( "-D${PROJECT_NAME}_WITH_MATLAB" )
 #     endif ()
 # endif()
+
+
 
 set (DEPENDENCY_NAMES ${_DEPENDENCY_NAMES} PARENT_SCOPE)
 set (DEPENDENCY_INCLUDES ${_DEPENDENCY_INCLUDES} PARENT_SCOPE)
